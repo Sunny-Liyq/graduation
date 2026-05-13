@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "export:pdf": "node slides/export-pdf.js",
+    "check:slides": "node slides/check-slides.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.52.0"
+  }
+}

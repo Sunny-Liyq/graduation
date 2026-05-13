@@ -1,0 +1,4 @@
+interface:
+  display_name: "Graduation Thesis Defense"
+  short_description: "Build thesis-grounded HTML defense slides with extracted figures and tables."
+  default_prompt: "Use $graduation-thesis-defense to create or update my thesis defense slides from the thesis PDF without inventing content."
