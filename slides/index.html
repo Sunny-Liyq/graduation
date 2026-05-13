@@ -35,7 +35,7 @@
           <div class="agenda-item"><strong>05 语音安全系统</strong><span>ASV+ADD 双因素级联验证硬件装置。</span></div>
           <div class="agenda-item"><strong>06 总结与展望</strong><span>贡献、局限与未来研究方向。</span></div>
         </div>
-        <span class="slide-number">02 / 34</span>
+        <span class="slide-number">02 / 41</span>
       </section>
 
       <section class="slide" data-footer="生成能力提升带来身份欺骗、隐私泄露与内容安全风险" id="slide-3">
@@ -61,7 +61,7 @@
             </div>
           </div>
         </div>
-        <span class="slide-number">03 / 34</span>
+        <span class="slide-number">03 / 41</span>
       </section>
 
       <section class="slide" data-footer="核心难点来自隐私残留、未知伪造泛化、跨模态对齐和实际部署" id="slide-4">
@@ -73,7 +73,14 @@
           <div class="card white"><div class="kpi">03</div><h3>多模态异常难建模</h3><p class="subtitle">音频、视频、语义之间存在复杂时序关联和跨模态耦合。</p></div>
           <div class="card white"><div class="kpi">04</div><h3>算法缺少部署载体</h3><p class="subtitle">实际语音安全需要低延迟、低功耗、可嵌入的防护方案。</p></div>
         </div>
-        <span class="slide-number">04 / 34</span>
+        <div class="logic-strip">
+          <div class="logic-item">隐私风险评测</div>
+          <div class="logic-item">单模态鲁棒检测</div>
+          <div class="logic-item">跨模态联合判别</div>
+          <div class="logic-item">端侧安全部署</div>
+        </div>
+        <div class="summary-band">四个挑战分别对应后续四项工作，形成从风险发现到防护落地的完整研究链条。</div>
+        <span class="slide-number">04 / 41</span>
       </section>
 
       <section class="slide" data-footer="本文技术路线：红队评测、单模态检测、多模态融合、硬件防护" id="slide-5">
@@ -101,7 +108,7 @@
             </div>
           </div>
         </div>
-        <span class="slide-number">05 / 34</span>
+        <span class="slide-number">05 / 41</span>
       </section>
 
       <section class="slide" data-footer="四项工作对应四类安全问题，形成互补贡献" id="slide-6">
@@ -125,11 +132,18 @@
             <p class="subtitle">实现说话人认证与音频伪造检测级联的双因素语音安全装置。</p>
           </div>
         </div>
-        <span class="slide-number">06 / 34</span>
+        <div class="logic-strip">
+          <div class="logic-item">红队式隐私评测</div>
+          <div class="logic-item">单模态视频检测</div>
+          <div class="logic-item">音视频联合推理</div>
+          <div class="logic-item">端侧级联防护</div>
+        </div>
+        <div class="summary-band">贡献之间不是并列堆叠，而是构成“评测攻击 → 视频检测 → 音视频联合检测 → 硬件防护”的递进关系。</div>
+        <span class="slide-number">06 / 41</span>
       </section>
 
-      <section class="slide" data-footer="背景图表用于解释伪造威胁和多模态模型发展脉络" id="assets-background">
-        <h2>背景图表如何支撑答辩叙事</h2>
+      <section class="slide" data-footer="背景证据用于解释伪造威胁和多模态模型发展脉络" id="assets-background">
+        <h2>背景证据：威胁场景与多模态趋势</h2>
         <div class="divider"></div>
         <div class="body compact grid two">
           <div class="explain-box">
@@ -150,8 +164,8 @@
         <span class="slide-number">背景图表</span>
       </section>
 
-      <section class="slide" data-footer="理论基础图表分别服务于特征提取、语音表示和生成伪造原理" id="assets-theory">
-        <h2>相关理论图表与后续工作的对应关系</h2>
+      <section class="slide" data-footer="理论基础分别服务于特征提取、语音表示和生成伪造原理" id="assets-theory">
+        <h2>理论基础：三项方法的技术支点</h2>
         <div class="divider"></div>
         <div class="body compact grid one-two">
           <div class="explain-box">
@@ -191,11 +205,16 @@
               <div class="bullet"><span class="dot"></span><span>需要更高强度攻击模型评估匿名化系统的安全边界。</span></div>
             </div>
           </div>
-          <div class="dashed big-center">
-            <div class="ring">匿名处理<br />不等于<br />身份信息完全消除</div>
+          <div class="decision-ring">
+            <strong>匿名处理不等于身份信息完全消除</strong>
+            <span>本页要说明的问题不是“声音听起来是否改变”，而是匿名语音经过深层模型表示后，是否仍能被重新区分为不同说话人。</span>
+            <div class="method-evidence">
+              <div class="figure-card short"><img src="assets/thesis/fig_2_3_wav2vec2.png" alt="图 2-3 wav2vec2 框架图" /><div class="caption">深层语音表示</div></div>
+              <div class="figure-card short"><img src="assets/thesis/fig_2_3_ecapa_tdnn.png" alt="图 2-3 ECAPA-TDNN 结构图" /><div class="caption">说话人嵌入判别</div></div>
+            </div>
           </div>
         </div>
-        <span class="slide-number">07 / 34</span>
+        <span class="slide-number">07 / 41</span>
       </section>
 
       <section class="slide" data-footer="SpecWav-Attack 通过深层表征、频谱增强和说话人嵌入联合挖掘身份残留" id="slide-8">
@@ -220,7 +239,7 @@
             <div class="caption">图 3-1：本页讲解的完整攻击链路，包含深层特征、频谱增强和说话人判别模块。</div>
           </div>
         </div>
-        <span class="slide-number">08 / 34</span>
+        <span class="slide-number">08 / 41</span>
       </section>
 
       <section class="slide" data-footer="两阶段训练先建立基础身份判别能力，再适应频域结构扰动" id="slide-9">
@@ -253,31 +272,31 @@
             </div>
           </div>
         </div>
-        <span class="slide-number">09 / 34</span>
+        <span class="slide-number">09 / 41</span>
       </section>
 
       <section class="slide" data-footer="EER 越低，说明攻击模型越能区分匿名语音中的身份差异" id="slide-10">
         <h2>实验设置：VoicePrivacy 场景</h2>
         <div class="divider"></div>
         <div class="body grid three">
-          <div class="card white">
+          <div class="card white metric-panel">
             <h3>训练集</h3>
             <div class="kpi">360h</div>
             <p class="kpi-label">LibriSpeech train-clean-360，约 921 位说话人，并构造等量频谱增强数据。</p>
           </div>
-          <div class="card white">
+          <div class="card white metric-panel">
             <h3>测试集</h3>
             <div class="kpi">40 + 40</div>
             <p class="kpi-label">librispeech-dev 与 librispeech-test，各包含 40 位说话人。</p>
           </div>
-          <div class="card white">
+          <div class="card white metric-panel">
             <h3>评估指标</h3>
             <div class="kpi">EER</div>
             <p class="kpi-label">等错误率；在匿名化安全评测中，EER 越低表示残余身份越容易被识别。</p>
           </div>
         </div>
         <div class="note" style="margin-top:0.32in;">测试语音经过 VoicePrivacy 官方匿名化系统处理，该系统采用基于 x-vector 的伪说话人生成与 HiFi-GAN 重建方案。</div>
-        <span class="slide-number">10 / 34</span>
+        <span class="slide-number">10 / 41</span>
       </section>
 
       <section class="slide" data-footer="SpecWav-Attack 显著降低匿名语音识别 EER，揭示身份残留风险" id="slide-11">
@@ -304,7 +323,7 @@
             </div>
           </div>
         </div>
-        <span class="slide-number">11 / 34</span>
+        <span class="slide-number">11 / 41</span>
       </section>
 
       <section class="slide" data-footer="工作一为语音隐私保护系统提供高强度安全评测工具" id="slide-12">
@@ -316,11 +335,11 @@
           <div class="card"><h3>评测价值</h3><p class="subtitle">可作为匿名化系统隐私保护能力分析和改进的实验依据。</p></div>
         </div>
         <div class="quote" style="margin-top:0.44in;">从“匿名化是否看起来改变声音”推进到“高维表示空间是否仍能区分身份”。</div>
-        <span class="slide-number">12 / 34</span>
+        <span class="slide-number">12 / 41</span>
       </section>
 
-      <section class="slide" data-footer="框架图、训练曲线和 EER 表分别对应方法、训练和实验结论" id="assets-specwav">
-        <h2>工作一图表讲解路径</h2>
+      <section class="slide" data-footer="框架图、训练曲线和 EER 表共同构成工作一的证据链" id="assets-specwav">
+        <h2>工作一证据链：方法、训练与结果</h2>
         <div class="divider"></div>
         <div class="body compact grid three">
           <div class="figure-card tall">
@@ -336,7 +355,7 @@
             <div class="caption">最后讲结果：SW 版本 EER 更低，证明攻击能更强地识别身份残留。</div>
           </div>
         </div>
-        <span class="slide-number">工作一图表</span>
+        <span class="slide-number">工作一证据</span>
       </section>
 
       <section class="slide" data-footer="不同伪造方法留下不同痕迹，固定特征表达难以跨场景泛化" id="slide-13">
@@ -348,7 +367,7 @@
             <div class="card"><h3>方法局限</h3><p class="subtitle">固定特征提取难以适应多种伪造类型，限制跨数据集泛化能力。</p></div>
             <div class="card"><h3>目标</h3><p class="subtitle">从多类互补特征中动态选择更具判别力的关键信息。</p></div>
           </div>
-          <div class="dashed">
+          <div class="dashed dense-card">
             <h3>伪造痕迹异构性</h3>
             <div class="pill-grid">
               <div class="pill">光照不一致</div>
@@ -358,9 +377,13 @@
               <div class="pill">纹理异常</div>
               <div class="pill">时序抖动</div>
             </div>
+            <div class="figure-card short" style="margin-top:0.18in;">
+              <img src="assets/thesis/fig_4_1_feature_visualization.png" alt="图 4-1 不同特征提取方式的可视化效果对比" />
+              <div class="caption">图 4-1 预示不同特征会突出不同伪造痕迹。</div>
+            </div>
           </div>
         </div>
-        <span class="slide-number">13 / 34</span>
+        <span class="slide-number">13 / 41</span>
       </section>
 
       <section class="slide" data-footer="SFE-Net 借鉴差异基因表达机制，实现选择性特征激活" id="slide-14">
@@ -382,7 +405,8 @@
             </div>
           </div>
         </div>
-        <span class="slide-number">14 / 34</span>
+        <div class="quote" style="margin-top:0.34in;">核心思想：不是让所有伪造特征同等参与，而是让模型根据输入样本动态激活最有判别力的线索。</div>
+        <span class="slide-number">14 / 41</span>
       </section>
 
       <section class="slide" data-footer="五类互补特征覆盖视频伪造的多维异常线索" id="slide-15">
@@ -401,7 +425,7 @@
             <div class="caption">图 4-1：不同特征强调不同伪造痕迹，本页用它解释“五类特征为什么互补”。</div>
           </div>
         </div>
-        <span class="slide-number">15 / 34</span>
+        <span class="slide-number">15 / 41</span>
       </section>
 
       <section class="slide" data-footer="帧级特征动态加权，视频级特征通过 LSTM 建模时序一致性" id="slide-16">
@@ -431,7 +455,7 @@
             </div>
           </div>
         </div>
-        <span class="slide-number">16 / 34</span>
+        <span class="slide-number">16 / 41</span>
       </section>
 
       <section class="slide" data-footer="跨数据集协议检验模型面对不同数据分布时的泛化能力" id="slide-17">
@@ -454,7 +478,8 @@
         <div class="flow" style="margin-top:0.42in;">
           <div class="flow-box">在 FF++ 上训练</div><div class="arrow">→</div><div class="flow-box">迁移到不同来源测试集</div><div class="arrow">→</div><div class="flow-box">评估跨场景泛化</div>
         </div>
-        <span class="slide-number">17 / 34</span>
+        <div class="summary-band">该设置的目的不是验证同分布准确率，而是检验模型面对未知数据源和未知伪造痕迹时的泛化能力。</div>
+        <span class="slide-number">17 / 41</span>
       </section>
 
       <section class="slide" data-footer="SFE-Net 在五个跨数据集测试集上的平均 AUC 达到 0.795" id="slide-18">
@@ -486,7 +511,7 @@
             </div>
           </div>
         </div>
-        <span class="slide-number">18 / 34</span>
+        <span class="slide-number">18 / 41</span>
       </section>
 
       <section class="slide" data-footer="消融实验证明多特征互补和选择性激活机制均有效" id="slide-19">
@@ -512,7 +537,7 @@
             </div>
           </div>
         </div>
-        <span class="slide-number">19 / 34</span>
+        <span class="slide-number">19 / 41</span>
       </section>
 
       <section class="slide" data-footer="工作二说明动态特征选择可提升复杂伪造场景下的鲁棒性" id="slide-20">
@@ -524,11 +549,11 @@
           <div class="card"><h3>实验结论</h3><p class="subtitle">在跨数据集平均 AUC 上达到 0.795，优于多类基线方法。</p></div>
         </div>
         <div class="quote" style="margin-top:0.44in;">不是让所有特征始终同等参与，而是让模型根据输入样本动态选择关键伪造线索。</div>
-        <span class="slide-number">20 / 34</span>
+        <span class="slide-number">20 / 41</span>
       </section>
 
-      <section class="slide" data-footer="SFE-Net 图表按特征、结构、时序和实验结果组织讲解" id="assets-sfenet">
-        <h2>工作二图表讲解路径</h2>
+      <section class="slide" data-footer="SFE-Net 证据按特征、结构、时序和实验结果组织" id="assets-sfenet">
+        <h2>工作二证据链：特征、结构与泛化</h2>
         <div class="divider"></div>
         <div class="body compact grid three">
           <div class="figure-card medium"><img src="assets/thesis/fig_4_1_feature_visualization.png" alt="图 4-1 不同特征提取方式的可视化效果对比" /><div class="caption">特征页：说明五类线索各自捕获不同伪造痕迹。</div></div>
@@ -538,7 +563,7 @@
           <div class="figure-card wide"><img src="assets/thesis/table_4_2_ablation.png" alt="表 4-2 消融实验" /><div class="caption">消融页：支撑多特征互补与 SFE-Net 门控有效性。</div></div>
           <div class="explain-box"><h3>讲解顺序</h3><p>先看“特征为什么要多样”，再看“网络如何选择”，最后用跨数据集和消融表证明这个选择机制确实有效。</p></div>
         </div>
-        <span class="slide-number">工作二图表</span>
+        <span class="slide-number">工作二证据</span>
       </section>
 
       <section class="slide" data-footer="音视频联合伪造需要同时分析模态内伪影和模态间一致性" id="slide-21">
@@ -565,7 +590,8 @@
             </div>
           </div>
         </div>
-        <span class="slide-number">21 / 34</span>
+        <div class="summary-band">音视频联合检测的关键不是把两个单模态分数相加，而是利用模型理解跨模态同步、语义和时序一致性。</div>
+        <span class="slide-number">21 / 41</span>
       </section>
 
       <section class="slide" data-footer="AV-LMMDetect 将音视频伪造检测转化为多模态问答式判别任务" id="slide-22">
@@ -596,7 +622,7 @@
             </div>
           </div>
         </div>
-        <span class="slide-number">22 / 34</span>
+        <span class="slide-number">22 / 41</span>
       </section>
 
       <section class="slide" data-footer="统一输入序列使模型同时利用视觉、听觉与任务文本信息" id="slide-23">
@@ -618,7 +644,15 @@
             <p class="subtitle">检测任务被转化为多模态问答问题。</p>
           </div>
         </div>
-        <span class="slide-number">23 / 34</span>
+        <div class="token-sequence">
+          <div class="token-box">Text<br />Prompt</div>
+          <div class="arrow">+</div>
+          <div class="token-box">Video<br />Tokens</div>
+          <div class="arrow">+</div>
+          <div class="token-box">Audio<br />Tokens</div>
+        </div>
+        <div class="summary-band">统一输入序列让模型在同一上下文里同时比较“看见的画面”和“听见的声音”。</div>
+        <span class="slide-number">23 / 41</span>
       </section>
 
       <section class="slide" data-footer="Top-2 Token 策略避免长文本生成不稳定，直接输出分类概率" id="slide-24">
@@ -636,11 +670,17 @@
               <div class="bullet"><span class="dot"></span><span>当 p(Fake) &gt; 0.5，判定为伪造。</span></div>
             </div>
           </div>
-          <div class="dashed big-center">
-            <div class="ring">更少生成随机性<br />更高推理效率<br />更稳定二分类</div>
+          <div class="decision-ring">
+            <strong>把生成式回答压缩为稳定二分类</strong>
+            <span>模型不需要生成长文本解释，只比较 Real 与 Fake 两个 token 的概率，降低生成随机性并提升推理效率。</span>
+            <div class="formula-card">
+              <h3>判别规则</h3>
+              <code>p(Fake) &gt; 0.5 → Fake</code>
+              <p>该规则直接服务于音视频伪造检测的二分类目标。</p>
+            </div>
           </div>
         </div>
-        <span class="slide-number">24 / 34</span>
+        <span class="slide-number">24 / 41</span>
       </section>
 
       <section class="slide" data-footer="两阶段 SFT 先高效适配任务，再学习细粒度跨模态伪造特征" id="slide-25">
@@ -673,7 +713,7 @@
             <div class="caption">图 5-3：把两阶段微调的参数冻结/解冻关系放在讲解旁边，避免只用文字描述训练策略。</div>
           </div>
         </div>
-        <span class="slide-number">25 / 34</span>
+        <span class="slide-number">25 / 41</span>
       </section>
 
       <section class="slide" data-footer="AV-LMMDetect 在 FakeAVCeleb 上达到与先进多模态方法相当的性能" id="slide-26">
@@ -699,7 +739,7 @@
             </div>
           </div>
         </div>
-        <span class="slide-number">26 / 34</span>
+        <span class="slide-number">26 / 41</span>
       </section>
 
       <section class="slide" data-footer="在开放集语言和开放集伪造方法下，多模态大模型保持较强泛化能力" id="slide-27">
@@ -727,7 +767,7 @@
             <div class="figure-card short"><img src="assets/thesis/table_5_2_mavos_results.png" alt="表 5-2 MAVOS-DD 数据集测试结果" /><div class="caption">表 5-2：本页四个开放集场景结果的来源。</div></div>
           </div>
         </div>
-        <span class="slide-number">27 / 34</span>
+        <span class="slide-number">27 / 41</span>
       </section>
 
       <section class="slide" data-footer="工作三展示了多模态大模型在复杂伪造检测中的潜力" id="slide-28">
@@ -745,11 +785,11 @@
             <div class="caption">表 5-3：两阶段训练策略消融，用于支撑“泛化提升来自训练策略”的总结。</div>
           </div>
         </div>
-        <span class="slide-number">28 / 34</span>
+        <span class="slide-number">28 / 41</span>
       </section>
 
-      <section class="slide" data-footer="AV-LMMDetect 图表按模型基础、检测流程、训练策略和数据集组织" id="assets-av-1">
-        <h2>工作三图表讲解路径 I：方法与数据</h2>
+      <section class="slide" data-footer="AV-LMMDetect 证据按模型基础、检测流程、训练策略和数据集组织" id="assets-av-1">
+        <h2>工作三证据链 I：模型、流程与数据</h2>
         <div class="divider"></div>
         <div class="body compact grid three">
           <div class="figure-card medium"><img src="assets/thesis/fig_5_1_qwen25_omni.png" alt="图 5-1 Qwen2.5 Omni 多模态大模型" /><div class="caption">模型基础：说明为什么可统一处理文本、音频和视频。</div></div>
@@ -759,17 +799,17 @@
           <div class="figure-card short"><img src="assets/thesis/fig_5_5_mavos_dd.png" alt="图 5-5 MAVOS-DD 数据集展示" /><div class="caption">开放集评估数据。</div></div>
           <div class="figure-card short"><img src="assets/thesis/table_5_1_fakeavceleb_results.png" alt="表 5-1 FakeAVCeleb 数据集测试结果" /><div class="caption">FakeAVCeleb 结果页的数据来源。</div></div>
         </div>
-        <span class="slide-number">工作三图表 I</span>
+        <span class="slide-number">工作三证据 I</span>
       </section>
 
-      <section class="slide" data-footer="MAVOS-DD 结果表和消融表用于讲开放集泛化和训练策略贡献" id="assets-av-2">
-        <h2>工作三图表讲解路径 II：开放集与消融</h2>
+      <section class="slide" data-footer="MAVOS-DD 结果表和消融表用于证明开放集泛化和训练策略贡献" id="assets-av-2">
+        <h2>工作三证据链 II：开放集与消融</h2>
         <div class="divider"></div>
         <div class="body compact grid two">
           <div class="figure-card tall"><img src="assets/thesis/table_5_2_mavos_results.png" alt="表 5-2 MAVOS-DD 数据集测试结果" /><div class="caption">开放集结果：逐项说明 In-domain、Open-set model、language、full 的泛化能力。</div></div>
           <div class="figure-card tall"><img src="assets/thesis/table_5_3_ablation.png" alt="表 5-3 两阶段训练策略消融实验结果" /><div class="caption">消融结果：说明两阶段训练策略对 Open-set full 的贡献。</div></div>
         </div>
-        <span class="slide-number">工作三图表 II</span>
+        <span class="slide-number">工作三证据 II</span>
       </section>
 
       <section class="slide" data-footer="实际语音安全需要在采集前端完成身份和真伪双重验证" id="slide-29">
@@ -784,11 +824,16 @@
               <div class="bullet"><span class="dot"></span><span>边缘设备部署受计算资源和功耗限制。</span></div>
             </div>
           </div>
-          <div class="dashed big-center">
-            <div class="ring">身份合法<br />且<br />语音真实<br />才允许通过</div>
+          <div class="decision-ring">
+            <strong>身份合法且语音真实才允许通过</strong>
+            <span>系统设计目标是把“谁在说”和“是不是人真实说”两个问题串联起来，堵住未授权用户和合成语音两类攻击入口。</span>
+            <div class="figure-card short">
+              <img src="assets/thesis/table_6_1_asv_add_value.png" alt="表 6-1 ASV+ADD 级联系统的安全价值" />
+              <div class="caption">表 6-1：级联验证的安全价值。</div>
+            </div>
           </div>
         </div>
-        <span class="slide-number">29 / 34</span>
+        <span class="slide-number">29 / 41</span>
       </section>
 
       <section class="slide" data-footer="ASV 判断是谁在说，ADD 判断是否为真实人声" id="slide-30">
@@ -818,7 +863,7 @@
             <div class="caption">表 6-2：本页联合决策矩阵的论文来源，强调只有 ASV Accept 且 ADD Real 才通过。</div>
           </div>
         </div>
-        <span class="slide-number">30 / 34</span>
+        <span class="slide-number">30 / 41</span>
       </section>
 
       <section class="slide" data-footer="硬件方案兼顾语音采集、实时推理、输出控制与低功耗部署" id="slide-31">
@@ -842,7 +887,7 @@
             <div class="card blue tight"><h3>芯片与封装</h3><p class="subtitle">模块化盒体约 5cm x 5cm x 2cm，包含麦克风阵列、主控 PCB 和供电模块。</p></div>
           </div>
         </div>
-        <span class="slide-number">31 / 34</span>
+        <span class="slide-number">31 / 41</span>
       </section>
 
       <section class="slide" data-footer="级联装置面向智能语音入口，提供硬件级安全防护" id="slide-32">
@@ -876,11 +921,11 @@
             </div>
           </div>
         </div>
-        <span class="slide-number">32 / 34</span>
+        <span class="slide-number">32 / 41</span>
       </section>
 
-      <section class="slide" data-footer="系统图表分别支撑安全价值、决策逻辑和嵌入式平台选择" id="assets-system">
-        <h2>工作四图表讲解路径</h2>
+      <section class="slide" data-footer="系统证据分别支撑安全价值、决策逻辑和嵌入式平台选择" id="assets-system">
+        <h2>工作四证据链：安全价值、决策与硬件</h2>
         <div class="divider"></div>
         <div class="body compact grid four">
           <div class="figure-card medium"><img src="assets/thesis/table_6_1_asv_add_value.png" alt="表 6-1 ASV+ADD 级联系统的安全价值" /><div class="caption">安全价值：说明双因素级联解决哪些攻击面。</div></div>
@@ -888,7 +933,7 @@
           <div class="figure-card medium"><img src="assets/thesis/fig_6_1_esp32s3.png" alt="图 6-1 ESP32-S3 芯片示意" /><div class="caption">ESP32-S3：适合低成本语音前端。</div></div>
           <div class="figure-card medium"><img src="assets/thesis/fig_6_2_stm32f7.png" alt="图 6-2 STM32F7 芯片示意" /><div class="caption">STM32F7：适合稳定性要求更高的部署场景。</div></div>
         </div>
-        <span class="slide-number">工作四图表</span>
+        <span class="slide-number">工作四证据</span>
       </section>
 
       <section class="slide" data-footer="本文形成从红队评测到蓝队防御、从算法到系统的完整链条" id="slide-33">
@@ -917,7 +962,7 @@
         <div class="card warning" style="margin-top:0.22in;">
           <p class="note">数据核对备注：本 PPT 主要使用各章实验表格中的可见指标。论文总结章个别指标与实验表格存在不一致，讲稿备注中保留核对提醒。</p>
         </div>
-        <span class="slide-number">33 / 34</span>
+        <span class="slide-number">33 / 41</span>
       </section>
 
       <section class="slide title-slide no-footer" id="slide-34">
@@ -932,6 +977,18 @@
 
     <script>
       const slides = Array.from(document.querySelectorAll(".slide"));
+      slides.forEach((slide, slideIndex) => {
+        const number = slide.querySelector(".slide-number");
+        if (number) number.textContent = `${String(slideIndex + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+      });
+      const params = new URLSearchParams(location.search);
+      if (params.get("single") === "1") {
+        const singleIndex = Math.max(0, Math.min(slides.length - 1, Number(params.get("slide") || 1) - 1));
+        document.body.classList.add("single-slide");
+        slides.forEach((slide, slideIndex) => {
+          if (slideIndex !== singleIndex) slide.remove();
+        });
+      }
       let index = 0;
 
       function showSlide(next) {
