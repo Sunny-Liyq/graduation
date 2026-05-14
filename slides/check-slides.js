@@ -4,8 +4,8 @@ const path = require("path");
 const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
 const matches = html.match(/<section class="slide/g) || [];
 
-if (matches.length !== 41) {
-  console.error(`Expected 41 slides, found ${matches.length}.`);
+if (matches.length !== 44) {
+  console.error(`Expected 44 slides, found ${matches.length}.`);
   process.exit(1);
 }
 
@@ -18,10 +18,8 @@ const required = [
   "99.2%",
   "98.02%",
   "85.09%",
-  "speaker-notes.md",
-  "fig_3_1_specwav_attack.png",
-  "table_4_1_cross_dataset_auc.png",
-  "table_5_2_mavos_results.png",
+  "../example/21.png",
+  "../example/28.png",
   "table_6_2_decision.png"
 ];
 
