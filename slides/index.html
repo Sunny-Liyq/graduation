@@ -55,11 +55,11 @@
           <div class="evidence-grid two">
             <div class="figure-card medium">
               <img src="../example/image copy 4.png" alt="深度伪造图片使用场景示意" />
-              <div class="caption">深度伪造已进入身份仿冒、内容生成和交互认证等场景。</div>
+              <div class="caption">图1 深度伪造已进入身份仿冒、内容生成和交互认证等场景。</div>
             </div>
             <div class="figure-card medium">
               <img src="../example/image copy 5.png" alt="名人换脸照片" />
-              <div class="caption">换脸示例说明视觉伪造具备直观欺骗性。</div>
+              <div class="caption">图2 换脸示例说明视觉伪造具备直观欺骗性。</div>
             </div>
           </div>
         </div>
@@ -102,11 +102,11 @@
           <div class="evidence-grid two">
             <div class="figure-card short">
               <img src="../example/image copy 7.png" alt="多模态大模型发展时间线" />
-              <div class="caption">支撑工作三的多模态大模型技术背景。</div>
+              <div class="caption">图3 支撑工作三的多模态大模型技术背景。</div>
             </div>
             <div class="figure-card short">
               <img src="../example/image copy 8.png" alt="Qwen3 omni" />
-              <div class="caption">展示多模态统一建模趋势，对应 AV-LMMDetect 的方法基础。</div>
+              <div class="caption">图4 展示多模态统一建模趋势，对应 AV-LMMDetect 的方法基础。</div>
             </div>
           </div>
         </div>
@@ -144,73 +144,78 @@
         <span class="slide-number">06 / 41</span>
       </section>
 
-      <section class="slide" data-footer="背景证据用于解释伪造威胁和多模态模型发展脉络" id="assets-background">
-        <h2>背景证据：威胁场景与多模态趋势</h2>
-        <div class="divider"></div>
-        <div class="body compact grid two">
-          <div class="explain-box">
-            <h3>先讲威胁，再讲技术来源</h3>
-            <p>左侧证据用于说明深度伪造已经具备真实场景欺骗性；右侧证据用于自然引出“为什么音视频联合检测可以借助多模态大模型”。</p>
-            <ul class="callout-list">
-              <li>左侧图回答“为什么要做安全评估与防护”。</li>
-              <li>右侧图回答“为什么工作三采用多模态大模型”。</li>
-            </ul>
-          </div>
-          <div class="evidence-grid two">
-            <div class="figure-card short"><img src="../example/image copy 4.png" alt="深度伪造图片使用场景示意" /><div class="caption">威胁场景</div></div>
-            <div class="figure-card short"><img src="../example/image copy 5.png" alt="名人换脸照片" /><div class="caption">视觉伪造示例</div></div>
-            <div class="figure-card short"><img src="../example/image copy 7.png" alt="多模态大模型发展时间线" /><div class="caption">多模态模型演进</div></div>
-            <div class="figure-card short"><img src="../example/image copy 8.png" alt="Qwen3 omni" /><div class="caption">统一多模态模型</div></div>
-          </div>
-        </div>
-        <span class="slide-number">背景图表</span>
-      </section>
-
-      <section class="slide" data-footer="理论基础分别服务于特征提取、语音表示和生成伪造原理" id="assets-theory">
-        <h2>理论基础：三项方法的技术支点</h2>
+      <section class="slide" data-footer="理论基础第一部分：深度学习与特征表示支撑后续模型设计" id="theory-vision">
+        <h2>理论基础（一）：深度学习与特征表示</h2>
         <div class="divider"></div>
         <div class="body compact grid one-two">
           <div class="explain-box">
-            <h3>这一页不是背景堆图，而是过渡页</h3>
-            <p>卷积、Transformer、语音表征和生成模型分别对应后续三个核心方法：SFE-Net 的视频特征、SpecWav-Attack 的语音表示、AV-LMMDetect 的多模态建模。</p>
+            <h3>论文第 2.1 节</h3>
+            <p>本节依次介绍卷积神经网络、注意力机制、Wav2Vec 2.0 自监督学习框架，以及大语言模型与多模态融合。</p>
             <ul class="callout-list">
-              <li>讲工作一时重点回到 wav2vec2、梅尔频谱和 ECAPA-TDNN。</li>
-              <li>讲工作二时回到卷积与视频特征提取。</li>
-              <li>讲工作三时回到 Transformer 和生成伪造模型。</li>
+              <li>卷积通过局部连接和权值共享提取空间结构特征。</li>
+              <li>注意力机制按任务相关性动态分配特征权重。</li>
+              <li>Wav2Vec 2.0 从无标注语音中学习深层表示。</li>
+              <li>多模态大模型通过模态对齐与跨模态注意力统一处理图像、视频、音频和文本。</li>
             </ul>
           </div>
           <div class="evidence-grid three">
-            <div class="figure-card short"><img src="../example/image copy 9.png" alt="卷积计算示例" /><div class="caption">卷积：视频特征提取基础</div></div>
-            <div class="figure-card short"><img src="../example/image copy 10.png" alt="Transformer 架构图" /><div class="caption">Transformer：大模型主干基础</div></div>
-            <div class="figure-card short"><img src="../example/image copy 12.png" alt="wav2vec2 框架图" /><div class="caption">wav2vec2：语音深层表示</div></div>
-            <div class="figure-card short"><img src="../example/image copy 11.png" alt="梅尔频谱图" /><div class="caption">梅尔频谱：音频表征</div></div>
-            <div class="figure-card short"><img src="../example/image copy 13.png" alt="ECAPA-TDNN 结构图" /><div class="caption">ECAPA-TDNN：说话人嵌入</div></div>
-            <div class="figure-card short"><img src="assets/thesis/fig_2_4_gan.png" alt="GAN 框架" /><div class="caption">GAN：伪造生成原理</div></div>
-            <div class="figure-card short"><img src="../example/image copy 14.png" alt="Diffusion 框架" /><div class="caption">Diffusion：新一代生成模型</div></div>
+            <div class="figure-card"><img src="../example/image copy 9.png" alt="卷积计算示例" />
+              <div class="caption">图5 卷积计算示例：局部区域加权聚合形成输出特征。</div></div>
+            <div class="figure-card"><img src="../example/image copy 10.png" alt="Transformer 架构图" />
+              <div class="caption">图6 Transformer 架构图：注意力机制支撑上下文建模。</div></div>
+            <div class="figure-card"><img src="../example/image copy 12.png" alt="wav2vec2 框架图" />
+              <div class="caption">图7 Wav2Vec 2.0：自监督语音表示学习框架。</div></div>
           </div>
         </div>
-        <span class="slide-number">理论图表</span>
+        <span class="slide-number">理论基础 I</span>
       </section>
 
-      <section class="slide" data-footer="理论基础补充说明语音表示与跨模态检测的模型支撑" id="theory-bridge">
-        <h2>理论基础补充：语音表征与跨模态建模</h2>
+      <section class="slide" data-footer="理论基础第二部分：语音信号处理与声纹识别支撑语音安全评测" id="theory-speech">
+        <h2>理论基础（二）：语音信号处理与声纹识别</h2>
         <div class="divider"></div>
         <div class="body compact grid two-wide">
           <div class="explain-box">
-            <h3>从语音表征到多模态推理</h3>
-            <p>语音匿名化评测依赖深层语音表征和说话人嵌入，多模态伪造检测则需要把视觉、音频和任务文本统一组织到同一推理流程中。</p>
+            <h3>论文第 2.2 节</h3>
+            <p>本节围绕语音特征和说话人识别展开，说明后续 SpecWav-Attack 与 ASV+ADD 系统依赖的语音表征基础。</p>
             <ul class="callout-list">
-              <li>语音侧关注身份残留和频谱结构。</li>
-              <li>视频侧关注局部伪影和时序一致性。</li>
-              <li>多模态侧关注音视频与语义之间的一致性。</li>
+              <li>梅尔频谱从时域波形中提取符合人耳感知的声学特征。</li>
+              <li>MFCC 更紧凑，梅尔频谱保留更多细节，适合深度学习模型使用。</li>
+              <li>ECAPA-TDNN 结合 TDNN、Res2Net、通道注意力和注意力统计池化生成说话人嵌入。</li>
+              <li>说话人嵌入可用于相似度匹配与身份认证。</li>
             </ul>
           </div>
-          <div class="evidence-grid two">
-            <div class="figure-card tall"><img src="../example/21.png" alt="语音表征与检测流程示意" /><div class="caption">语音表征与检测流程示意。</div></div>
-            <div class="figure-card tall"><img src="../example/22.png" alt="多模态建模示意" /><div class="caption">多模态建模示意。</div></div>
+          <div class="evidence-grid speech-gallery">
+            <div class="figure-card"><img src="../example/image copy 11.png" alt="梅尔频谱图" />
+              <div class="caption">图8 梅尔频谱图：语音信号的常用声学表示。</div></div>
+            <div class="figure-card"><img src="../example/image copy 13.png" alt="ECAPA-TDNN 结构图" />
+              <div class="caption">图9 ECAPA-TDNN：声纹识别网络结构。</div></div>
           </div>
         </div>
-        <span class="slide-number">理论基础补充</span>
+        <span class="slide-number">理论基础 II</span>
+      </section>
+
+      <section class="slide" data-footer="理论基础第三部分：伪造生成机制与检测原理解释后续检测任务来源" id="theory-generation">
+        <h2>理论基础（三）：伪造生成与检测原理</h2>
+        <div class="divider"></div>
+        <div class="body compact grid two-wide">
+          <div class="explain-box">
+            <h3>论文第 2.3 节</h3>
+            <p>本节从生成和检测两个角度解释深度伪造问题：GAN 与扩散模型提升生成质量，也在生物一致性、频率域、压缩重建、时序一致性和音视频同步等方面留下可检测线索。</p>
+            <ul class="callout-list">
+              <li>GAN 通过生成器与判别器对抗训练生成伪造样本。</li>
+              <li>扩散模型通过正向加噪和反向去噪实现高质量生成。</li>
+              <li>检测方法关注生成算法局限、处理痕迹和物理规律违背。</li>
+              <li>音视频联合伪造还需要分析口型、声音和表情之间的同步关系。</li>
+            </ul>
+          </div>
+          <div class="evidence-grid generation-gallery">
+            <div class="figure-card"><img src="assets/thesis/fig_2_4_gan_clean.png" alt="GAN 框架" />
+              <div class="caption">图10 GAN 框架：生成器与判别器对抗学习。</div></div>
+            <div class="figure-card"><img src="../example/image copy 14.png" alt="Diffusion 框架" />
+              <div class="caption">图11 Diffusion 框架：扩散与去噪生成过程。</div></div>
+          </div>
+        </div>
+        <span class="slide-number">理论基础 III</span>
       </section>
 
       <section class="slide" data-footer="匿名化的目标是隐藏身份，但深层语音表示可能仍保留可分信息" id="slide-7">
@@ -232,8 +237,10 @@
             <strong>匿名处理不等于身份信息完全消除</strong>
             <span>本页要说明的问题不是“声音听起来是否改变”，而是匿名语音经过深层模型表示后，是否仍能被重新区分为不同说话人。</span>
             <div class="method-evidence">
-              <div class="figure-card short"><img src="../example/image copy 12.png" alt="wav2vec2 框架图" /><div class="caption">深层语音表示</div></div>
-              <div class="figure-card short"><img src="../example/image copy 13.png" alt="ECAPA-TDNN 结构图" /><div class="caption">说话人嵌入判别</div></div>
+              <div class="figure-card short"><img src="../example/image copy 12.png" alt="wav2vec2 框架图" />
+              <div class="caption">图12 深层语音表示</div></div>
+              <div class="figure-card short"><img src="../example/image copy 13.png" alt="ECAPA-TDNN 结构图" />
+              <div class="caption">图13 说话人嵌入判别</div></div>
             </div>
           </div>
         </div>
@@ -259,7 +266,7 @@
           </div>
           <div class="figure-card tall">
             <img src="../example/image copy 15.png" alt="SpecWav-Attack 框架" />
-            <div class="caption">本页讲解的完整攻击链路，包含深层特征、频谱增强和说话人判别模块。</div>
+              <div class="caption">图14 本页讲解的完整攻击链路，包含深层特征、频谱增强和说话人判别模块。</div>
           </div>
         </div>
         <span class="slide-number">08 / 41</span>
@@ -278,7 +285,7 @@
             </div>
             <div class="figure-card short" style="margin-top:0.18in;">
               <img src="../example/image copy 11.png" alt="梅尔频谱图" />
-              <div class="caption">梅尔频谱图说明增强操作作用在频域表示上。</div>
+              <div class="caption">图15 梅尔频谱图说明增强操作作用在频域表示上。</div>
             </div>
           </div>
           <div class="card">
@@ -291,7 +298,7 @@
             <p class="subtitle">论文训练曲线显示：进入增强阶段后，训练损失和验证损失均进一步下降。</p>
             <div class="figure-card short" style="margin-top:0.18in;">
               <img src="../example/image copy 16.png" alt="损失函数曲线" />
-              <div class="caption">训练曲线用于支撑“两阶段训练继续收敛”的讲解。</div>
+              <div class="caption">图16 训练曲线用于支撑“两阶段训练继续收敛”的讲解。</div>
             </div>
           </div>
         </div>
@@ -342,7 +349,7 @@
             <div class="card"><h3>主要结论</h3><p class="subtitle">Wav2Vec 2.0 表示、ECAPA-TDNN 架构、频谱增强策略和两阶段训练形成协同增益。</p></div>
             <div class="figure-card short">
               <img src="../example/17.png" alt="在 Librispeech 数据集上测试结果" />
-              <div class="caption">是本页 EER 柱状摘要的数据来源。</div>
+              <div class="caption">表1 是本页 EER 柱状摘要的数据来源。</div>
             </div>
           </div>
         </div>
@@ -367,15 +374,15 @@
         <div class="body compact grid three">
           <div class="figure-card tall">
             <img src="../example/image copy 15.png" alt="SpecWav-Attack 框架" />
-            <div class="caption">先讲方法：匿名语音如何经过深层表征、频谱增强和说话人判别。</div>
+              <div class="caption">图17 先讲方法：匿名语音如何经过深层表征、频谱增强和说话人判别。</div>
           </div>
           <div class="figure-card medium">
             <img src="../example/image copy 16.png" alt="损失函数曲线" />
-            <div class="caption">再讲训练：增强阶段后损失继续下降，说明模型适应频域扰动。</div>
+              <div class="caption">图18 再讲训练：增强阶段后损失继续下降，说明模型适应频域扰动。</div>
           </div>
           <div class="figure-card tall">
             <img src="../example/17.png" alt="在 Librispeech 数据集上测试结果" />
-            <div class="caption">最后讲结果：SW 版本 EER 更低，证明攻击能更强地识别身份残留。</div>
+              <div class="caption">表2 最后讲结果：SW 版本 EER 更低，证明攻击能更强地识别身份残留。</div>
           </div>
         </div>
         <span class="slide-number">工作一证据</span>
@@ -402,7 +409,7 @@
             </div>
             <div class="figure-card short" style="margin-top:0.18in;">
               <img src="../example/image copy 17.png" alt="不同特征提取方式的可视化效果对比" />
-              <div class="caption">预示不同特征会突出不同伪造痕迹。</div>
+              <div class="caption">图19 预示不同特征会突出不同伪造痕迹。</div>
             </div>
           </div>
         </div>
@@ -445,7 +452,7 @@
           </div>
           <div class="figure-card tall">
             <img src="../example/image copy 17.png" alt="不同特征提取方式的可视化效果对比" />
-            <div class="caption">不同特征强调不同伪造痕迹，本页用它解释“五类特征为什么互补”。</div>
+              <div class="caption">图20 不同特征强调不同伪造痕迹，本页用它解释“五类特征为什么互补”。</div>
           </div>
         </div>
         <span class="slide-number">15 / 41</span>
@@ -470,7 +477,7 @@
           <div class="evidence-grid sfenet-structure-gallery">
             <div class="figure-card medium sfenet-main-figure">
               <img src="../example/image copy 19.png" alt="SFE-Net 结构图" />
-              <div class="caption">对应本页“特征提取-门控-融合-分类”的主流程。</div>
+              <div class="caption">图21 对应本页“特征提取-门控-融合-分类”的主流程。</div>
             </div>
           </div>
         </div>
@@ -526,7 +533,7 @@
             </div>
             <div class="figure-card short" style="margin-top:0.14in;">
               <img src="../example/21.png" alt="跨数据集泛化性能对比" />
-              <div class="caption">是本页平均 AUC 和分数据集 AUC 的来源。</div>
+              <div class="caption">表3 是本页平均 AUC 和分数据集 AUC 的来源。</div>
             </div>
           </div>
         </div>
@@ -552,7 +559,7 @@
             <div class="card blue"><h3>五特征 + SFE-Net</h3><div class="kpi">0.795</div><p class="kpi-label">动态选择进一步突出关键判别线索。</p></div>
             <div class="figure-card short">
               <img src="../example/22.png" alt="消融实验" />
-              <div class="caption">从单特征、融合到加入 SFE-Net 的逐步提升。</div>
+              <div class="caption">表4 从单特征、融合到加入 SFE-Net 的逐步提升。</div>
             </div>
           </div>
         </div>
@@ -575,11 +582,16 @@
         <h2>工作二证据链：特征、结构与泛化</h2>
         <div class="divider"></div>
         <div class="body compact grid three">
-          <div class="figure-card medium"><img src="../example/image copy 17.png" alt="不同特征提取方式的可视化效果对比" /><div class="caption">特征页：说明五类线索各自捕获不同伪造痕迹。</div></div>
-          <div class="figure-card medium"><img src="../example/image copy 18.png" alt="SFE-Net 结构图" /><div class="caption">结构页：说明动态门控如何选择并融合特征。</div></div>
-          <div class="figure-card medium"><img src="../example/image copy 20.png" alt="LSTM 结构" /><div class="caption">时序页：说明视频级检测需要帧间关系建模。</div></div>
-          <div class="figure-card wide"><img src="../example/21.png" alt="跨数据集泛化性能对比" /><div class="caption">结果页：支撑平均 AUC 0.795 和跨数据集泛化结论。</div></div>
-          <div class="figure-card wide"><img src="../example/22.png" alt="消融实验" /><div class="caption">消融页：支撑多特征互补与 SFE-Net 门控有效性。</div></div>
+          <div class="figure-card medium"><img src="../example/image copy 17.png" alt="不同特征提取方式的可视化效果对比" />
+              <div class="caption">图22 特征页：说明五类线索各自捕获不同伪造痕迹。</div></div>
+          <div class="figure-card medium"><img src="../example/image copy 18.png" alt="SFE-Net 结构图" />
+              <div class="caption">图23 结构页：说明动态门控如何选择并融合特征。</div></div>
+          <div class="figure-card medium"><img src="../example/image copy 20.png" alt="LSTM 结构" />
+              <div class="caption">图24 时序页：说明视频级检测需要帧间关系建模。</div></div>
+          <div class="figure-card wide"><img src="../example/21.png" alt="跨数据集泛化性能对比" />
+              <div class="caption">表5 结果页：支撑平均 AUC 0.795 和跨数据集泛化结论。</div></div>
+          <div class="figure-card wide"><img src="../example/22.png" alt="消融实验" />
+              <div class="caption">表6 消融页：支撑多特征互补与 SFE-Net 门控有效性。</div></div>
           <div class="explain-box"><h3>讲解顺序</h3><p>先看“特征为什么要多样”，再看“网络如何选择”，最后用跨数据集和消融表证明这个选择机制确实有效。</p></div>
         </div>
         <span class="slide-number">工作二证据</span>
@@ -626,11 +638,11 @@
           <div class="large-figure-grid two">
             <div class="figure-card large-visual">
               <img src="../example/image copy 21.png" alt="Qwen2.5 Omni 多模态大模型" />
-              <div class="caption">说明 AV-LMMDetect 采用的多模态大模型基础。</div>
+              <div class="caption">图25 说明 AV-LMMDetect 采用的多模态大模型基础。</div>
             </div>
             <div class="figure-card large-visual">
               <img src="../example/image copy 22.png" alt="AV-LMMDetect 的流程示意图" />
-              <div class="caption">对应本页“音频+视频+问题 -> Real/Fake”的检测流程。</div>
+              <div class="caption">图26 对应本页“音频+视频+问题 -> Real/Fake”的检测流程。</div>
             </div>
           </div>
         </div>
@@ -722,7 +734,7 @@
           </div>
           <div class="figure-card tall">
             <img src="../example/image copy 23.png" alt="AV-LMMDetect 两阶段微调" />
-            <div class="caption">把两阶段微调的参数冻结/解冻关系放在讲解旁边，避免只用文字描述训练策略。</div>
+              <div class="caption">图27 把两阶段微调的参数冻结/解冻关系放在讲解旁边，避免只用文字描述训练策略。</div>
           </div>
         </div>
         <span class="slide-number">25 / 41</span>
@@ -739,8 +751,10 @@
             <div><strong>82.4-89.2%</strong><span>其他代表方法 AUC</span></div>
           </div>
           <div class="large-figure-grid two">
-            <div class="figure-card large-visual"><img src="../example/image copy 25.png" alt="FakeAVCeleb 数据集组成展示" /><div class="caption">FakeAVCeleb 数据集组成展示。</div></div>
-            <div class="figure-card large-visual"><img src="../example/26.png" alt="FakeAVCeleb 数据集测试结果" /><div class="caption">FakeAVCeleb 数据集测试结果来源。</div></div>
+            <div class="figure-card large-visual"><img src="../example/image copy 25.png" alt="FakeAVCeleb 数据集组成展示" />
+              <div class="caption">图28 FakeAVCeleb 数据集组成展示。</div></div>
+            <div class="figure-card large-visual"><img src="../example/26.png" alt="FakeAVCeleb 数据集测试结果" />
+              <div class="caption">表7 FakeAVCeleb 数据集测试结果来源。</div></div>
           </div>
         </div>
         <span class="slide-number">26 / 41</span>
@@ -767,8 +781,10 @@
             </div>
           </div>
           <div class="evidence-stack">
-            <div class="figure-card short"><img src="assets/thesis/fig_5_5_mavos_dd.png" alt="MAVOS-DD 数据集展示" /><div class="caption">说明开放集评估所依赖的数据构成。</div></div>
-            <div class="figure-card short"><img src="../example/28.png" alt="MAVOS-DD 数据集测试结果" /><div class="caption">本页四个开放集场景结果的来源。</div></div>
+            <div class="figure-card short"><img src="assets/thesis/fig_5_5_mavos_dd.png" alt="MAVOS-DD 数据集展示" />
+              <div class="caption">图29 说明开放集评估所依赖的数据构成。</div></div>
+            <div class="figure-card short"><img src="../example/28.png" alt="MAVOS-DD 数据集测试结果" />
+              <div class="caption">表8 本页四个开放集场景结果的来源。</div></div>
           </div>
         </div>
         <span class="slide-number">27 / 41</span>
@@ -786,7 +802,7 @@
           </div>
           <div class="figure-card medium">
             <img src="../example/27.png" alt="两阶段训练策略消融实验结果" />
-            <div class="caption">两阶段训练策略消融，用于支撑“泛化提升来自训练策略”的总结。</div>
+              <div class="caption">表9 两阶段训练策略消融，用于支撑“泛化提升来自训练策略”的总结。</div>
           </div>
         </div>
         <span class="slide-number">28 / 41</span>
@@ -796,12 +812,18 @@
         <h2>工作三证据链 I：模型、流程与数据</h2>
         <div class="divider"></div>
         <div class="body compact grid three">
-          <div class="figure-card medium"><img src="../example/image copy 21.png" alt="Qwen2.5 Omni 多模态大模型" /><div class="caption">模型基础：说明为什么可统一处理文本、音频和视频。</div></div>
-          <div class="figure-card medium"><img src="../example/image copy 22.png" alt="AV-LMMDetect 的流程示意图" /><div class="caption">检测流程：说明输入、Prompt 和 Real/Fake 判别。</div></div>
-          <div class="figure-card medium"><img src="../example/image copy 24.png" alt="AV-LMMDetect 两阶段微调" /><div class="caption">训练策略：解释 LoRA 适配与编码器联合微调。</div></div>
-          <div class="figure-card short"><img src="../example/image copy 25.png" alt="FakeAVCeleb 数据集组成展示" /><div class="caption">封闭集评估数据。</div></div>
-          <div class="figure-card short"><img src="assets/thesis/fig_5_5_mavos_dd.png" alt="MAVOS-DD 数据集展示" /><div class="caption">开放集评估数据。</div></div>
-          <div class="figure-card short"><img src="../example/26.png" alt="FakeAVCeleb 数据集测试结果" /><div class="caption">FakeAVCeleb 结果页的数据来源。</div></div>
+          <div class="figure-card medium"><img src="../example/image copy 21.png" alt="Qwen2.5 Omni 多模态大模型" />
+              <div class="caption">图30 模型基础：说明为什么可统一处理文本、音频和视频。</div></div>
+          <div class="figure-card medium"><img src="../example/image copy 22.png" alt="AV-LMMDetect 的流程示意图" />
+              <div class="caption">图31 检测流程：说明输入、Prompt 和 Real/Fake 判别。</div></div>
+          <div class="figure-card medium"><img src="../example/image copy 24.png" alt="AV-LMMDetect 两阶段微调" />
+              <div class="caption">图32 训练策略：解释 LoRA 适配与编码器联合微调。</div></div>
+          <div class="figure-card short"><img src="../example/image copy 25.png" alt="FakeAVCeleb 数据集组成展示" />
+              <div class="caption">图33 封闭集评估数据。</div></div>
+          <div class="figure-card short"><img src="assets/thesis/fig_5_5_mavos_dd.png" alt="MAVOS-DD 数据集展示" />
+              <div class="caption">图34 开放集评估数据。</div></div>
+          <div class="figure-card short"><img src="../example/26.png" alt="FakeAVCeleb 数据集测试结果" />
+              <div class="caption">表10 FakeAVCeleb 结果页的数据来源。</div></div>
         </div>
         <span class="slide-number">工作三证据 I</span>
       </section>
@@ -810,8 +832,10 @@
         <h2>工作三证据链 II：开放集与消融</h2>
         <div class="divider"></div>
         <div class="body compact grid two">
-          <div class="figure-card tall"><img src="../example/28.png" alt="MAVOS-DD 数据集测试结果" /><div class="caption">开放集结果：逐项说明 In-domain、Open-set model、language、full 的泛化能力。</div></div>
-          <div class="figure-card tall"><img src="../example/27.png" alt="两阶段训练策略消融实验结果" /><div class="caption">消融结果：说明两阶段训练策略对 Open-set full 的贡献。</div></div>
+          <div class="figure-card tall"><img src="../example/28.png" alt="MAVOS-DD 数据集测试结果" />
+              <div class="caption">表11 开放集结果：逐项说明 In-domain、Open-set model、language、full 的泛化能力。</div></div>
+          <div class="figure-card tall"><img src="../example/27.png" alt="两阶段训练策略消融实验结果" />
+              <div class="caption">表12 消融结果：说明两阶段训练策略对 Open-set full 的贡献。</div></div>
         </div>
         <span class="slide-number">工作三证据 II</span>
       </section>
@@ -833,7 +857,7 @@
             <span>系统设计目标是把“谁在说”和“是不是人真实说”两个问题串联起来，堵住未授权用户和合成语音两类攻击入口。</span>
             <div class="figure-card short">
               <img src="assets/thesis/table_6_1_asv_add_value.png" alt="ASV+ADD 级联系统的安全价值" />
-              <div class="caption">级联验证的安全价值。</div>
+              <div class="caption">表13 级联验证的安全价值。</div>
             </div>
           </div>
         </div>
@@ -864,7 +888,7 @@
           </div>
           <div class="figure-card tall">
             <img src="assets/thesis/table_6_2_decision.png" alt="ASV+ADD 联合决策逻辑" />
-            <div class="caption">本页联合决策矩阵的论文来源，强调只有 ASV Accept 且 ADD Real 才通过。</div>
+              <div class="caption">表14 本页联合决策矩阵的论文来源，强调只有 ASV Accept 且 ADD Real 才通过。</div>
           </div>
         </div>
         <span class="slide-number">30 / 41</span>
@@ -885,8 +909,10 @@
           </div>
           <div class="evidence-stack">
             <div class="grid two" style="gap:0.12in;">
-              <div class="figure-card short"><img src="assets/thesis/fig_6_1_esp32s3.png" alt="ESP32-S3 芯片示意" /><div class="caption">低成本消费级部署平台。</div></div>
-              <div class="figure-card short"><img src="assets/thesis/fig_6_2_stm32f7.png" alt="STM32F7 芯片示意" /><div class="caption">工业级稳定部署平台。</div></div>
+              <div class="figure-card short"><img src="assets/thesis/fig_6_1_esp32s3.png" alt="ESP32-S3 芯片示意" />
+              <div class="caption">图35 低成本消费级部署平台。</div></div>
+              <div class="figure-card short"><img src="assets/thesis/fig_6_2_stm32f7.png" alt="STM32F7 芯片示意" />
+              <div class="caption">图36 工业级稳定部署平台。</div></div>
             </div>
             <div class="card blue tight"><h3>芯片与封装</h3><p class="subtitle">模块化盒体约 5cm x 5cm x 2cm，包含麦克风阵列、主控 PCB 和供电模块。</p></div>
           </div>
@@ -910,7 +936,7 @@
             </div>
             <div class="figure-card short" style="margin-top:0.18in;">
               <img src="assets/thesis/table_6_1_asv_add_value.png" alt="ASV+ADD 级联系统的安全价值" />
-              <div class="caption">说明 ASV+ADD 级联系统在身份冒充和合成攻击中的安全价值。</div>
+              <div class="caption">表15 说明 ASV+ADD 级联系统在身份冒充和合成攻击中的安全价值。</div>
             </div>
           </div>
           <div class="card blue">
@@ -932,10 +958,14 @@
         <h2>工作四证据链：安全价值、决策与硬件</h2>
         <div class="divider"></div>
         <div class="body compact grid four">
-          <div class="figure-card medium"><img src="assets/thesis/table_6_1_asv_add_value.png" alt="ASV+ADD 级联系统的安全价值" /><div class="caption">安全价值：说明双因素级联解决哪些攻击面。</div></div>
-          <div class="figure-card medium"><img src="assets/thesis/table_6_2_decision.png" alt="ASV+ADD 联合决策逻辑" /><div class="caption">联合决策：解释 Accept/Reject 与 Real/Fake 的组合规则。</div></div>
-          <div class="figure-card medium"><img src="assets/thesis/fig_6_1_esp32s3.png" alt="ESP32-S3 芯片示意" /><div class="caption">ESP32-S3：适合低成本语音前端。</div></div>
-          <div class="figure-card medium"><img src="assets/thesis/fig_6_2_stm32f7.png" alt="STM32F7 芯片示意" /><div class="caption">STM32F7：适合稳定性要求更高的部署场景。</div></div>
+          <div class="figure-card medium"><img src="assets/thesis/table_6_1_asv_add_value.png" alt="ASV+ADD 级联系统的安全价值" />
+              <div class="caption">表16 安全价值：说明双因素级联解决哪些攻击面。</div></div>
+          <div class="figure-card medium"><img src="assets/thesis/table_6_2_decision.png" alt="ASV+ADD 联合决策逻辑" />
+              <div class="caption">表17 联合决策：解释 Accept/Reject 与 Real/Fake 的组合规则。</div></div>
+          <div class="figure-card medium"><img src="assets/thesis/fig_6_1_esp32s3.png" alt="ESP32-S3 芯片示意" />
+              <div class="caption">图37 ESP32-S3：适合低成本语音前端。</div></div>
+          <div class="figure-card medium"><img src="assets/thesis/fig_6_2_stm32f7.png" alt="STM32F7 芯片示意" />
+              <div class="caption">图38 STM32F7：适合稳定性要求更高的部署场景。</div></div>
         </div>
         <span class="slide-number">工作四证据</span>
       </section>
