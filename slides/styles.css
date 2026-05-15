@@ -871,6 +871,58 @@ h3 {
   text-align: center;
 }
 
+.table-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 0.12in;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0.08in;
+  min-height: 0;
+}
+
+.generated-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  align-self: center;
+  color: #202b3d;
+  font-size: 0.14in;
+  line-height: 1.34;
+}
+
+.generated-table th,
+.generated-table td {
+  border: 1px solid var(--line);
+  padding: 0.1in 0.11in;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.generated-table th {
+  background: var(--blue-3);
+  color: var(--blue);
+  font-weight: 850;
+}
+
+.generated-table td {
+  background: #fff;
+}
+
+.generated-table .emphasis td {
+  background: #f4f8ff;
+  color: #173b91;
+  font-weight: 850;
+}
+
+.table-card .caption {
+  color: var(--muted);
+  font-size: 0.105in;
+  line-height: 1.28;
+  text-align: center;
+}
+
 .evidence-layout {
   display: grid;
   grid-template-columns: 1.1fr 1.65fr;
@@ -1041,7 +1093,8 @@ h3 {
 }
 
 #slide-3 .evidence-layout.reverse {
-  grid-template-columns: 0.65fr 2.35fr;
+  grid-template-columns: 0.42fr 2.58fr;
+  gap: 0.1in;
   align-items: start;
 }
 
@@ -1051,19 +1104,37 @@ h3 {
 }
 
 #slide-3 .card.tight {
-  min-height: 0.72in;
+  min-height: 0.62in;
+  padding: 0.09in;
+}
+
+#slide-3 .card.tight h3 {
+  font-size: 0.165in;
 }
 
 #slide-3 .card.tight .subtitle {
-  margin-top: 0.05in;
+  margin-top: 0.04in;
+  font-size: 0.13in;
+  line-height: 1.34;
+}
+
+#slide-3 .quote {
+  font-size: 0.14in;
+  line-height: 1.36;
+  padding: 0.1in 0.12in;
+}
+
+#slide-3 .evidence-grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 #slide-3 .figure-card {
-  min-height: 3.6in;
+  min-height: 3.82in;
+  padding: 0.08in;
 }
 
 #slide-3 .figure-card.medium img {
-  max-height: 3.25in;
+  max-height: 3.36in;
 }
 
 #slide-6 .card,
@@ -1272,7 +1343,7 @@ h3 {
 }
 
 #theory-generation .generation-gallery .figure-card:first-child img {
-  max-height: 1.9in;
+  max-height: 2.3in;
 }
 
 #slide-13 .feature-trace-card {
@@ -1304,42 +1375,192 @@ h3 {
   object-fit: contain;
 }
 
-#slide-16 .sfenet-structure-gallery {
-  grid-template-columns: 1fr;
-  grid-template-rows: minmax(0, 1fr);
+#slide-16 .sfenet-pdf-layout {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 0.13in;
+  min-height: 5.68in;
 }
 
-#slide-16 .evidence-layout.reverse {
-  grid-template-columns: 0.55fr 1.95fr !important;
-  gap: 0.14in;
-  min-height: 5.8in;
+#slide-16 .sfenet-pdf-top {
+  display: grid;
+  grid-template-columns: 1.12fr 1fr;
+  gap: 0.15in;
+  align-items: stretch;
 }
 
-#slide-16 .sfenet-structure-gallery .figure-card {
-  min-height: 5.78in;
+#slide-16 .sfenet-pdf-top .grid.two {
+  gap: 0.12in !important;
 }
 
-#slide-16 .sfenet-structure-gallery .figure-card:first-child {
-  min-height: 5.78in;
+#slide-16 .sfenet-pdf-figure {
+  min-height: 5.12in;
+  padding: 0.06in;
 }
 
-#slide-16 .sfenet-structure-gallery .figure-card:first-child img {
-  max-height: 5.36in;
+#slide-16 .sfenet-pdf-figure img {
+  max-height: 4.86in;
   object-fit: contain;
 }
 
-#slide-16 .sfenet-structure-gallery .figure-card img {
-  max-height: 5.36in;
-  object-fit: contain;
-}
-
-#slide-16 .evidence-stack .flow-box {
+#slide-16 .sfenet-pdf-top .flow-box {
   min-height: 0.78in;
   padding: 0.12in;
 }
 
-#slide-16 .evidence-stack .card.tight {
+#slide-16 .sfenet-pdf-top .card.tight {
   padding: 0.1in;
+}
+
+#slide-29 .system-safety-table {
+  margin-top: 0.18in;
+}
+
+#slide-30 .asv-decision-layout {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 0.18in;
+}
+
+#slide-30 .decision-source-table {
+  min-height: 3.05in;
+}
+
+#slide-30 .decision-source-table .generated-table {
+  font-size: 0.17in;
+}
+
+#slide-32 .system-safety-table .generated-table {
+  font-size: 0.105in;
+  line-height: 1.25;
+}
+
+#slide-32 .system-safety-table .generated-table th,
+#slide-32 .system-safety-table .generated-table td {
+  padding: 0.07in 0.06in;
+}
+
+#slide-28 .av-ablation-table .generated-table {
+  font-size: 0.16in;
+}
+
+#slide-27 .mavos-layout {
+  display: grid;
+  grid-template-rows: 2.35in 3.24in;
+  gap: 0.14in;
+}
+
+#slide-27 .mavos-top {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 0.16in;
+  min-height: 0;
+}
+
+#slide-27 .mavos-dataset-figure {
+  padding: 0.07in;
+}
+
+#slide-27 .mavos-dataset-figure img {
+  max-height: 1.86in;
+}
+
+#slide-27 .mavos-top .card.tight {
+  min-height: 0.7in;
+  padding: 0.11in;
+}
+
+#slide-27 .mavos-top h3 {
+  font-size: 0.17in;
+  margin-bottom: 0.04in;
+}
+
+#slide-27 .mavos-top .subtitle {
+  margin-top: 0;
+  font-size: 0.125in;
+  line-height: 1.32;
+}
+
+#slide-27 .mavos-results-table {
+  min-height: 3.24in;
+  padding: 0.08in;
+}
+
+#slide-27 .mavos-results-table .generated-table {
+  font-size: 0.079in;
+  line-height: 1.12;
+}
+
+#slide-27 .mavos-results-table .generated-table th,
+#slide-27 .mavos-results-table .generated-table td {
+  padding: 0.038in 0.024in;
+}
+
+#slide-27 .mavos-results-table .generated-table th:first-child,
+#slide-27 .mavos-results-table .generated-table td:first-child {
+  width: 1.15in;
+}
+
+#slide-27 .mavos-table-page {
+  min-height: 5.72in;
+}
+
+#slide-27 .mavos-table-page .mavos-results-table {
+  min-height: 5.62in;
+  padding: 0.12in;
+}
+
+#slide-27 .mavos-table-page .generated-table {
+  height: 4.82in;
+  font-size: 0.16in;
+  line-height: 1.38;
+}
+
+#slide-27 .mavos-table-page .generated-table th,
+#slide-27 .mavos-table-page .generated-table td {
+  padding: 0.13in 0.04in;
+}
+
+#slide-27 .mavos-table-page .caption {
+  font-size: 0.12in;
+  line-height: 1.35;
+  padding-top: 0.04in;
+}
+
+#slide-25 .body.grid.two-one {
+  grid-template-columns: 0.76fr 1.24fr;
+  gap: 0.17in;
+  min-height: 5.58in;
+}
+
+#slide-25 .figure-card.tall {
+  min-height: 5.52in;
+}
+
+#slide-25 .figure-card.tall img {
+  max-height: 5.14in;
+}
+
+#slide-26 .fakeav-results-table {
+  min-height: 4.2in;
+  padding: 0.09in 0.11in;
+}
+
+#slide-26 .fakeav-results-table .generated-table {
+  height: 5.35in;
+  font-size: 0.2in;
+  line-height: 1.28;
+}
+
+#slide-26 .fakeav-results-table .generated-table th,
+#slide-26 .fakeav-results-table .generated-table td {
+  padding: 0.068in 0.064in;
+}
+
+#slide-26 .fakeav-results-table .generated-table th:first-child,
+#slide-26 .fakeav-results-table .generated-table td:first-child {
+  text-align: left;
+  width: 2.08in;
 }
 
 #slide-18 .body.grid.two-one {
@@ -1498,6 +1719,65 @@ h3 {
   color: #364256;
   font-size: 0.13in;
   font-weight: 700;
+}
+
+.work-output {
+  margin-top: 0.14in;
+  border-left: 0.05in solid var(--green);
+  border-radius: 8px;
+  background: #eefaf5;
+  padding: 0.1in 0.13in;
+}
+
+.work-output.inline {
+  margin-top: 0.12in;
+}
+
+.work-output strong {
+  display: block;
+  color: #137452;
+  font-size: 0.135in;
+  line-height: 1.2;
+}
+
+.work-output span {
+  display: block;
+  margin-top: 0.04in;
+  color: #244237;
+  font-size: 0.13in;
+  line-height: 1.36;
+  font-weight: 700;
+}
+
+.summary-results {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.16in;
+}
+
+.summary-results .card {
+  min-height: 1.42in;
+  padding: 0.16in;
+}
+
+.summary-results h3 {
+  color: var(--blue);
+  font-size: 0.18in;
+}
+
+.summary-results p {
+  color: #344054;
+  font-size: 0.145in;
+  line-height: 1.42;
+}
+
+.summary-results span {
+  display: block;
+  margin-top: 0.08in;
+  color: #137452;
+  font-size: 0.125in;
+  line-height: 1.3;
+  font-weight: 800;
 }
 
 .achievement-layout {
