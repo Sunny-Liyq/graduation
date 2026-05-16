@@ -202,11 +202,11 @@
           </div>
           <div class="evidence-grid three">
             <div class="figure-card"><img src="../example/image copy 9.png" alt="卷积计算示例" />
-              <div class="caption">图6 卷积计算示例：局部区域加权聚合形成输出特征。</div></div>
+              <div class="caption">图4 卷积计算示例：局部区域加权聚合形成输出特征。</div></div>
             <div class="figure-card"><img src="../example/image copy 10.png" alt="Transformer 架构图" />
-              <div class="caption">图7 Transformer 架构图：注意力机制支撑上下文建模。</div></div>
+              <div class="caption">图5 Transformer 架构图：注意力机制支撑上下文建模。</div></div>
             <div class="figure-card"><img src="../example/image copy 12.png" alt="wav2vec2 框架图" />
-              <div class="caption">图8 Wav2Vec 2.0：自监督语音表示学习框架。</div></div>
+              <div class="caption">图6 Wav2Vec 2.0：自监督语音表示学习框架。</div></div>
           </div>
         </div>
         <span class="slide-number">07 / 39</span>
@@ -228,9 +228,9 @@
           </div>
           <div class="evidence-grid speech-gallery">
             <div class="figure-card"><img src="../example/image copy 11.png" alt="梅尔频谱图" />
-              <div class="caption">图9 梅尔频谱图：语音信号的常用声学表示。</div></div>
+              <div class="caption">图7 梅尔频谱图：语音信号的常用声学表示。</div></div>
             <div class="figure-card"><img src="../example/image copy 13.png" alt="ECAPA-TDNN 结构图" />
-              <div class="caption">图10 ECAPA-TDNN：声纹识别网络结构。</div></div>
+              <div class="caption">图8 ECAPA-TDNN：声纹识别网络结构。</div></div>
           </div>
         </div>
         <span class="slide-number">08 / 39</span>
@@ -252,12 +252,57 @@
           </div>
           <div class="evidence-grid generation-gallery">
             <div class="figure-card"><img src="../example/image copy 29.png" alt="GAN 生成器与判别器训练框架" />
-              <div class="caption">图11 GAN 框架：随机输入经生成器生成样本，并与真实样本共同送入判别器计算对抗损失。</div></div>
+              <div class="caption">图9 GAN 框架：随机输入经生成器生成样本，并与真实样本共同送入判别器计算对抗损失。</div></div>
             <div class="figure-card"><img src="../example/image copy 14.png" alt="Diffusion 框架" />
-              <div class="caption">图12 Diffusion 框架：扩散与去噪生成过程。</div></div>
+              <div class="caption">图10 Diffusion 框架：扩散与去噪生成过程。</div></div>
           </div>
         </div>
         <span class="slide-number">09 / 39</span>
+      </section>
+
+      <section class="slide" data-footer="工作一基于 VoicePrivacy Attacker Challenge，从攻击者视角检验匿名语音中的身份残留" id="voiceprivacy-attacker-background">
+        <h2>工作一背景：VoicePrivacy Attacker Challenge</h2>
+        <div class="divider"></div>
+        <div class="body compact attacker-background-layout">
+          <div class="attacker-context-card">
+            <div class="challenge-icon"><svg class="deck-icon"><use href="#icon-shield"></use></svg></div>
+            <h3>语音隐私保护的评测博弈</h3>
+            <p>语音包含年龄、性别、健康状况、地域背景等个人信息。VoicePrivacy 将隐私保护建模为用户与攻击者之间的博弈：用户先对语音进行匿名化处理，攻击者再尝试从匿名语音中恢复说话人身份。</p>
+            <div class="context-rule">匿名化系统的隐私水平，由所有攻击者中最低的识别错误率来衡量。</div>
+          </div>
+          <div class="attacker-flow-card">
+            <h3>挑战赛任务：寻找更强 Voice Attacker</h3>
+            <div class="attacker-flow">
+              <div><strong>原始语音</strong><span>说话人身份、语义内容与声学特征共同存在。</span></div>
+              <div class="flow-arrow">→</div>
+              <div><strong>匿名化系统</strong><span>生成类似伪说话人的匿名语音，尽量保留语言和情感内容。</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="emphasis"><strong>攻击者系统</strong><span>输出 trial 语音与 enrollment 说话人的 ASV 分数。</span></div>
+            </div>
+          </div>
+          <div class="benchmark-grid">
+            <div>
+              <svg class="mini-icon"><use href="#icon-mic"></use></svg>
+              <strong>Benchmark 数据</strong>
+              <span>训练使用 LibriSpeech train-clean-360；开发集与评测集均包含 enrollment utterances 与匿名 trial utterances。</span>
+            </div>
+            <div>
+              <svg class="mini-icon"><use href="#icon-chart"></use></svg>
+              <strong>评价指标</strong>
+              <span>采用 EER 衡量攻击者性能；EER 越低，说明攻击者越强，匿名化语音中的身份残留越容易被利用。</span>
+            </div>
+            <div>
+              <svg class="mini-icon"><use href="#icon-network"></use></svg>
+              <strong>本文位置</strong>
+              <span>SpecWav-Attack 使用 Wav2Vec 2.0 深层表征与 spectrogram resizing，作为 A.41 攻击系统参与该任务。</span>
+            </div>
+          </div>
+          <div class="attacker-result-note">
+            <strong>挑战赛发现</strong>
+            <span>最佳攻击系统相对 baseline 将 EER 降低 25%–44%，说明 VoicePrivacy 2024 中匿名化系统的隐私保护效果可能被高估。</span>
+          </div>
+        </div>
+        <span class="slide-number">10 / 39</span>
       </section>
 
       <section class="slide" data-footer="匿名化的目标是隐藏身份，但深层语音表示可能仍保留可分信息" id="slide-7">
@@ -280,10 +325,35 @@
             </div>
           </div>
           <div class="specwav-visual-stack">
-            <div class="figure-card"><img src="../example/image copy 12.png" alt="wav2vec2 框架图" />
-              <div class="caption">图13 Wav2Vec 2.0 提取深层语音表示，用于分析匿名语音中的身份残留。</div></div>
-            <div class="figure-card"><img src="../example/image copy 13.png" alt="ECAPA-TDNN 结构图" />
-              <div class="caption">图14 ECAPA-TDNN 将深层表示映射为说话人嵌入并执行身份判别。</div></div>
+            <div class="speech-flow-card">
+              <div class="flow-card-title"><svg class="mini-icon"><use href="#icon-mic"></use></svg><strong>语音信号处理与梅尔频谱提取</strong><span>将原始语音波形转换为适合模型学习的时频表示。</span></div>
+              <div class="speech-process">
+                <div class="process-step"><svg class="mini-icon"><use href="#icon-mic"></use></svg><strong>原始波形</strong></div>
+                <div class="process-arrow">→</div>
+                <div class="process-step"><svg class="mini-icon"><use href="#icon-video"></use></svg><strong>分帧加窗</strong></div>
+                <div class="process-arrow">→</div>
+                <div class="process-step"><svg class="mini-icon"><use href="#icon-chart"></use></svg><strong>STFT</strong></div>
+                <div class="process-arrow">→</div>
+                <div class="process-step"><svg class="mini-icon"><use href="#icon-network"></use></svg><strong>梅尔滤波器组</strong></div>
+                <div class="process-arrow">→</div>
+                <div class="process-step"><svg class="mini-icon"><use href="#icon-chart"></use></svg><strong>梅尔频谱</strong></div>
+              </div>
+            </div>
+            <div class="speaker-flow-row">
+              <div class="speaker-flow-card">
+                <div class="flow-card-title"><svg class="mini-icon"><use href="#icon-shield"></use></svg><strong>ECAPA-TDNN：说话人嵌入生成</strong><span>以梅尔频谱为输入，生成紧凑的说话人身份表示。</span></div>
+                <div class="speaker-blocks">
+                  <div><strong>Conv1D 层</strong><span>帧级声学特征</span></div>
+                  <div><strong>SE-Res2Block</strong><span>残差 + 多尺度卷积</span></div>
+                  <div><strong>注意力统计池化</strong><span>加权聚合 utterance 向量</span></div>
+                </div>
+              </div>
+              <div class="embedding-output-card">
+                <span>最终输出</span>
+                <strong>高维说话人嵌入向量</strong>
+                <p>用于身份认证、声纹匹配与匿名语音身份残留评估。</p>
+              </div>
+            </div>
           </div>
         </div>
         <span class="slide-number">10 / 39</span>
@@ -308,7 +378,7 @@
           </div>
           <div class="figure-card tall specwav-method-figure">
             <img src="../example/image copy 15.png" alt="SpecWav-Attack 框架" />
-              <div class="caption">图15 本页讲解的完整攻击链路，包含深层特征、频谱增强和说话人判别模块。</div>
+              <div class="caption">图11 本页讲解的完整攻击链路，包含深层特征、频谱增强和说话人判别模块。</div>
           </div>
         </div>
         <span class="slide-number">11 / 39</span>
@@ -327,7 +397,7 @@
             </div>
             <div class="figure-card short" style="margin-top:0.18in;">
               <img src="../example/image copy 11.png" alt="梅尔频谱图" />
-              <div class="caption">图16 梅尔频谱图说明增强操作作用在频域表示上。</div>
+              <div class="caption">图12 梅尔频谱图说明增强操作作用在频域表示上。</div>
             </div>
           </div>
           <div class="card">
@@ -340,7 +410,7 @@
             <p class="subtitle">论文训练曲线显示：进入增强阶段后，训练损失和验证损失均进一步下降。</p>
             <div class="figure-card short" style="margin-top:0.18in;">
               <img src="../example/image copy 16.png" alt="损失函数曲线" />
-              <div class="caption">图17 训练曲线用于支撑“两阶段训练继续收敛”的讲解。</div>
+              <div class="caption">图13 训练曲线用于支撑“两阶段训练继续收敛”的讲解。</div>
             </div>
           </div>
         </div>
@@ -350,24 +420,33 @@
       <section class="slide" data-footer="EER 越低，说明攻击模型越能区分匿名语音中的身份差异" id="slide-10">
         <h2>工作一：实验设置：VoicePrivacy 场景</h2>
         <div class="divider"></div>
-        <div class="body grid three">
-          <div class="card white metric-panel">
-            <h3>训练集</h3>
-            <div class="kpi">360h</div>
-            <p class="kpi-label">LibriSpeech train-clean-360，约 921 位说话人，并构造等量频谱增强数据。</p>
+        <div class="body compact voiceprivacy-setting-layout">
+          <div class="voiceprivacy-metric-row">
+            <div class="card white metric-panel">
+              <h3>训练集</h3>
+              <div class="kpi">360h</div>
+              <p class="kpi-label">LibriSpeech train-clean-360，约 921 位说话人，并构造等量频谱增强数据。</p>
+            </div>
+            <div class="card white metric-panel">
+              <h3>测试集</h3>
+              <div class="kpi">40 + 40</div>
+              <p class="kpi-label">librispeech-dev 与 librispeech-test，各包含 40 位说话人。</p>
+            </div>
+            <div class="card white metric-panel">
+              <h3>评估指标</h3>
+              <div class="kpi">EER</div>
+              <p class="kpi-label">Equal Error Rate，等错误率。</p>
+              <div class="eer-detail">
+                <strong>FAR(τ) = FRR(τ)</strong>
+                <span>调节阈值 τ，当误接受率 FAR 与误拒绝率 FRR 相等时，该共同错误率即为 EER；从攻击者视角看，EER 越低表示越容易重识别真实说话人。</span>
+              </div>
+            </div>
           </div>
-          <div class="card white metric-panel">
-            <h3>测试集</h3>
-            <div class="kpi">40 + 40</div>
-            <p class="kpi-label">librispeech-dev 与 librispeech-test，各包含 40 位说话人。</p>
-          </div>
-          <div class="card white metric-panel">
-            <h3>评估指标</h3>
-            <div class="kpi">EER</div>
-            <p class="kpi-label">等错误率；在匿名化安全评测中，EER 越低表示残余身份越容易被识别。</p>
+          <div class="figure-card voiceprivacy-attacker-figure">
+            <img src="../example/ChatGPT Image 2026年5月16日 15_04_11.png" alt="VoicePrivacy 攻击者评测流程图" />
+            <div class="caption">图14 VoicePrivacy Attacker Challenge 的基线攻击者流程。</div>
           </div>
         </div>
-        <div class="note" style="margin-top:0.32in;">测试语音经过 VoicePrivacy 官方匿名化系统处理，该系统采用基于 x-vector 的伪说话人生成与 HiFi-GAN 重建方案。</div>
         <span class="slide-number">13 / 39</span>
       </section>
 
@@ -448,7 +527,7 @@
             </div>
             <div class="figure-card short" style="margin-top:0.18in;">
               <img src="../example/image copy 17.png" alt="不同特征提取方式的可视化效果对比" />
-              <div class="caption">图18 预示不同特征会突出不同伪造痕迹。</div>
+              <div class="caption">图15 预示不同特征会突出不同伪造痕迹。</div>
             </div>
           </div>
         </div>
@@ -491,7 +570,7 @@
           </div>
           <div class="figure-card tall">
             <img src="../example/image copy 17.png" alt="不同特征提取方式的可视化效果对比" />
-              <div class="caption">图19 不同特征强调不同伪造痕迹，本页用它解释“五类特征为什么互补”。</div>
+              <div class="caption">图16 不同特征强调不同伪造痕迹，本页用它解释“五类特征为什么互补”。</div>
           </div>
         </div>
         <span class="slide-number">18 / 39</span>
@@ -515,7 +594,7 @@
           </div>
           <div class="figure-card sfenet-pdf-figure">
               <img src="assets/thesis/slide19_pdf_cropped.png" alt="SFE-Net 结构图" />
-              <div class="caption">图20 对应本页“特征提取-门控-融合-分类”的主流程。</div>
+              <div class="caption">图17 对应本页“特征提取-门控-融合-分类”的主流程。</div>
           </div>
         </div>
         <span class="slide-number">19 / 39</span>
@@ -662,11 +741,11 @@
           <div class="evidence-grid two lmm-background-figures">
             <div class="figure-card">
               <img src="../example/image copy 7.png" alt="多模态大模型发展时间线" />
-              <div class="caption">多模态大模型能力演进为音视频联合伪造检测提供方法基础。</div>
+              <div class="caption">图18 多模态大模型能力演进为音视频联合伪造检测提供方法基础。</div>
             </div>
             <div class="figure-card">
               <img src="../example/image copy 8.png" alt="Qwen3 omni 多模态模型" />
-              <div class="caption">统一理解语音、视觉与文本信息，是 AV-LMMDetect 的技术背景。</div>
+              <div class="caption">图19 统一理解语音、视觉与文本信息，是 AV-LMMDetect 的技术背景。</div>
             </div>
           </div>
         </div>
@@ -697,7 +776,10 @@
             </div>
           </div>
         </div>
-        <div class="summary-band">音视频联合检测的关键不是把两个单模态分数相加，而是利用模型理解跨模态同步、语义和时序一致性；对应论文 Leveraging large multimodal models for audio-video deepfake detection: a pilot study，ICASSP 2026 共同第一作者。</div>
+        <div class="work-output">
+          <strong>成果对应</strong>
+          <span>Leveraging Large Multimodal Models for Audio-Video Deepfake Detection: A Pilot Study，ICASSP 2026 共同第一作者。</span>
+        </div>
         <span class="slide-number">24 / 39</span>
       </section>
 
@@ -714,11 +796,11 @@
           <div class="large-figure-grid two">
             <div class="figure-card large-visual">
               <img src="../example/image copy 21.png" alt="Qwen2.5 Omni 多模态大模型" />
-              <div class="caption">图21 说明 AV-LMMDetect 采用的多模态大模型基础。</div>
+              <div class="caption">图20 说明 AV-LMMDetect 采用的多模态大模型基础。</div>
             </div>
             <div class="figure-card large-visual">
               <img src="../example/image copy 22.png" alt="AV-LMMDetect 的流程示意图" />
-              <div class="caption">图22 对应本页“音频+视频+问题 -> Real/Fake”的检测流程。</div>
+              <div class="caption">图21 对应本页“音频+视频+问题 -> Real/Fake”的检测流程。</div>
             </div>
           </div>
         </div>
@@ -810,7 +892,7 @@
           </div>
           <div class="figure-card tall">
             <img src="../example/image copy 23.png" alt="AV-LMMDetect 两阶段微调" />
-              <div class="caption">图23 把两阶段微调的参数冻结/解冻关系放在讲解旁边，避免只用文字描述训练策略。</div>
+              <div class="caption">图22 把两阶段微调的参数冻结/解冻关系放在讲解旁边，避免只用文字描述训练策略。</div>
           </div>
         </div>
         <span class="slide-number">28 / 39</span>
@@ -827,9 +909,10 @@
             <div><strong>82.4-89.2%</strong><span>其他代表方法 AUC</span></div>
           </div>
           <div class="large-figure-grid two">
-            <div class="figure-card large-visual"><img src="../example/image copy 25.png" alt="FakeAVCeleb 数据集组成展示" />
-              <div class="caption">图24 FakeAVCeleb 数据集组成展示。</div></div>
+            <div class="figure-card large-visual"><img src="../example/image copy 3.png" alt="FakeAVCeleb 数据集组成展示" />
+              <div class="caption">图23 FakeAVCeleb 数据集组成展示。</div></div>
             <div class="table-card fakeav-results-table">
+              <div class="caption">表4 FakeAVCeleb 数据集上不同方法的音视频伪造检测性能对比。</div>
               <table class="generated-table">
                 <thead><tr><th>Method</th><th>Modality</th><th>AUC</th><th>Acc</th></tr></thead>
                 <tbody>
@@ -885,11 +968,23 @@
         <h2>工作三：小结</h2>
         <div class="divider"></div>
         <div class="body compact grid two-one">
-          <div class="grid three" style="gap:0.13in;">
-            <div class="card"><h3>统一建模</h3><p class="subtitle">将音频、视频与文本问题统一为多模态输入序列。</p></div>
-            <div class="card"><h3>高效判别</h3><p class="subtitle">Top-2 Token 策略直接输出 Real/Fake 概率。</p></div>
-            <div class="card"><h3>泛化提升</h3><p class="subtitle">两阶段 SFT 在两个数据集上均获得强性能。</p></div>
-            <div class="quote" style="grid-column:1 / -1;margin-top:0.05in;">从底层伪影检测扩展到跨模态语义和时序一致性推理。</div>
+          <div class="work3-dataset-contrast">
+            <div class="card dataset-card">
+              <h3>FakeAVCeleb：闭集高性能场景</h3>
+              <p class="subtitle">数据分布相对集中，训练与测试伪造类型更接近；现有音视频方法已接近性能上限。</p>
+              <div class="metric-mini"><strong>99.2%</strong><span>AV-LMMDetect AUC</span><strong>99.1%</strong><span>AVFF AUC</span></div>
+            </div>
+            <div class="card dataset-card blue">
+              <h3>MAVOS-DD：开放集泛化场景</h3>
+              <p class="subtitle">同时考察未见伪造模型、未见语言和二者叠加，语义、语言和生成方式都发生分布迁移。</p>
+              <div class="metric-mini"><strong>85.09%</strong><span>Open-set full Acc</span><strong>+6.22</strong><span>相对最佳基线 Acc</span></div>
+            </div>
+            <div class="reason-card">
+              <h3>为什么 MAVOS-DD 上提升更明显？</h3>
+              <div><strong>基线更易失效</strong><span>传统方法依赖固定伪影或单模态线索，遇到未见语言/未见生成模型时退化更明显。</span></div>
+              <div><strong>大模型先验更有价值</strong><span>AV-LMMDetect 利用 Qwen 2.5 Omni 的语音、视觉和文本理解能力，能建模语义一致性与音视频时序关系。</span></div>
+              <div><strong>两阶段 SFT 放大泛化收益</strong><span>先适配检测任务，再学习细粒度跨模态伪造线索，因此在开放集 full 设置中提升更突出。</span></div>
+            </div>
           </div>
           <div class="table-card av-ablation-table">
             <table class="generated-table">
@@ -934,6 +1029,10 @@
               <div class="caption">表7 级联验证的安全价值。</div>
             </div>
           </div>
+        </div>
+        <div class="work-output">
+          <strong>成果对应</strong>
+          <span>发明专利：一种基于自动说话人验证与语音伪造检测的双因素级联语音安全防护系统，初审合格。</span>
         </div>
         <span class="slide-number">32 / 39</span>
       </section>
@@ -983,9 +1082,9 @@
           <div class="evidence-stack">
             <div class="grid two" style="gap:0.12in;">
               <div class="figure-card short"><img src="../example/image copy 27.png" alt="STM32F7 开发板示意" />
-              <div class="caption">图26 STM32F7 嵌入式部署平台。</div></div>
+              <div class="caption">图24 STM32F7 嵌入式部署平台。</div></div>
               <div class="figure-card short"><img src="../example/image copy 28.png" alt="ESP32-S3 芯片引脚示意" />
-              <div class="caption">图27 ESP32-S3 引脚资源与接口示意。</div></div>
+              <div class="caption">图25 ESP32-S3 引脚资源与接口示意。</div></div>
             </div>
             <div class="card blue tight"><h3>芯片与封装</h3><p class="subtitle">模块化盒体约 5cm x 5cm x 2cm，包含麦克风阵列、主控 PCB 和供电模块。</p></div>
           </div>

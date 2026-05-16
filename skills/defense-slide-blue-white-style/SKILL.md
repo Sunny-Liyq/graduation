@@ -32,6 +32,8 @@ Use this skill when styling this user's thesis defense HTML slides.
 - Keep figure cards in the same blue-white system: white or pale-blue background, thin pale-blue border, modest 8px radius, short captions, and no decorative dark blocks unless already part of the reference style.
 - When a page has multiple evidence images, use a stable grid or stacked cards with matched widths/heights. Avoid uneven image boxes that make one figure look accidental.
 - Preserve image aspect ratio and all image content. If a container is larger than the image ratio, allow clean padding/background rather than cropping.
+- Every generated table must have a concise caption/title displayed above the table, numbered sequentially as `表1`, `表2`, `表3`, ... in HTML presentation order.
+- Table captions should use the blue-white academic style, be visually distinct from figure captions, and should not overlap with table cells or consume so much height that the table becomes cramped.
 
 ## Icon Rules
 
@@ -58,6 +60,8 @@ Use this skill when styling this user's thesis defense HTML slides.
 
 ## Validation
 
+- Interpret user-referenced page numbers as the slide number shown in the HTML deck's bottom-right corner, not as a document-wide ordinal including the cover/title page. The cover has no visible page number, so always locate target slides by the visible `.slide-number` / rendered bottom-right page number before editing.
+- When unsure, inspect nearby `<span class="slide-number">...` values or the runtime numbering logic and confirm the target section title before modifying content.
 - Check slide count after adding/removing pages.
 - Confirm there is no duplicate footer/summary strip.
 - Confirm no letter-only icon placeholders remain on newly styled pages.

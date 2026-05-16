@@ -4,13 +4,15 @@ const path = require("path");
 const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
 const matches = html.match(/<section class="slide/g) || [];
 
-if (matches.length !== 40) {
-  console.error(`Expected 40 slides, found ${matches.length}.`);
+if (matches.length !== 41) {
+  console.error(`Expected 41 slides, found ${matches.length}.`);
   process.exit(1);
 }
 
 const required = [
   "SpecWav-Attack",
+  "VoicePrivacy Attacker Challenge",
+  "25%–44%",
   "SFE-Net",
   "AV-LMMDetect",
   "ASV+ADD",
