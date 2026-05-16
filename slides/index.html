@@ -366,8 +366,8 @@
           <div class="evidence-stack">
             <div class="flow" style="margin-top:0;">
               <div class="flow-box">匿名语音<br />波形输入</div><div class="arrow">→</div>
-              <div class="flow-box">Wav2Vec 2.0<br />深层特征</div><div class="arrow">→</div>
               <div class="flow-box">SR 增强</div><div class="arrow">→</div>
+              <div class="flow-box">Wav2Vec 2.0<br />深层特征</div><div class="arrow">→</div>
               <div class="flow-box">ECAPA-TDNN<br />身份判别</div>
             </div>
             <div class="specwav-method-cards">
@@ -378,7 +378,7 @@
           </div>
           <div class="figure-card tall specwav-method-figure">
             <img src="../example/image copy 15.png" alt="SpecWav-Attack 框架" />
-              <div class="caption">图11 本页讲解的完整攻击链路，包含深层特征、频谱增强和说话人判别模块。</div>
+              <div class="caption">图11 本页讲解的完整攻击链路，包含频谱增强、深层特征和说话人判别模块。</div>
           </div>
         </div>
         <span class="slide-number">11 / 39</span>
@@ -401,13 +401,13 @@
             </div>
           </div>
           <div class="card">
-            <h3>两阶段增量训练</h3>
+            <h3>处理顺序</h3>
             <div class="flow" style="margin-top:0.12in;">
-              <div class="flow-box">阶段一<br />LibriSpeech 原始语音<br />Epoch 1-10</div>
+              <div class="flow-box">阶段一<br />SR 增强<br />扩展音色扰动</div>
               <div class="arrow">→</div>
-              <div class="flow-box">阶段二<br />SR 增强数据<br />Epoch 11-12</div>
+              <div class="flow-box">阶段二<br />Wav2Vec 2.0<br />提取深层特征</div>
             </div>
-            <p class="subtitle">论文训练曲线显示：进入增强阶段后，训练损失和验证损失均进一步下降。</p>
+            <p class="subtitle">处理顺序调整为先进行 SR 频谱增强，再送入 Wav2Vec 2.0 提取深层语音特征。</p>
             <div class="figure-card short" style="margin-top:0.18in;">
               <img src="../example/image copy 16.png" alt="损失函数曲线" />
               <div class="caption">图13 训练曲线用于支撑“两阶段训练继续收敛”的讲解。</div>
@@ -562,11 +562,11 @@
         <div class="divider"></div>
         <div class="body compact grid two-wide">
           <div class="module-list">
-            <div class="module"><div class="module-icon">L</div><div><strong>光照一致性 Lico</strong><code>S_region = var(I_region) = 1/N Σ(I_i - μ)^2</code><span>区域亮度方差刻画光源矛盾。</span></div></div>
-            <div class="module"><div class="module-icon">H</div><div><strong>高频特征 Hifr</strong><code>F = FFT(I_gray), F' = F · H, I_hf = IFFT(F')</code><span>高通频谱与相位信息捕获生成伪影。</span></div></div>
-            <div class="module"><div class="module-icon">C</div><div><strong>压缩重建 Comr</strong><code>R = I_original - I_comp, Q = 90</code><span>JPEG 重建残差暴露压缩历史不一致。</span></div></div>
-            <div class="module"><div class="module-icon">M</div><div><strong>形态操作 Moop</strong><code>O=(G⊖A)⊕A, C=(G⊕A)⊖A, M=(G⊕A)-(G⊖A)</code><span>开闭运算与形态梯度增强融合边界。</span></div></div>
-            <div class="module"><div class="module-icon">T</div><div><strong>纹理特征 Text</strong><code>Text = [LBP, GLCM contrast/corr./energy/homogeneity]</code><span>纹理统计量刻画皮肤微观异常。</span></div></div>
+            <div class="module"><div class="module-icon">L</div><div><strong>光照一致性 Lico</strong><code>S<sub>r</sub> = Var(I<sub>r</sub>) = N<sup>-1</sup> Σ<sub>i</sub>(I<sub>i</sub> - μ)<sup>2</sup></code><span>区域亮度方差刻画光源矛盾。</span></div></div>
+            <div class="module"><div class="module-icon">H</div><div><strong>高频特征 Hifr</strong><code>F = FFT(I<sub>gray</sub>), F<sub>h</sub> = F · H, I<sub>hf</sub> = IFFT(F<sub>h</sub>)</code><span>高通频谱与相位信息捕获生成伪影。</span></div></div>
+            <div class="module"><div class="module-icon">C</div><div><strong>压缩重建 Comr</strong><code>R = I<sub>orig</sub> - I<sub>jpeg</sub>, Q = 90</code><span>JPEG 重建残差暴露压缩历史不一致。</span></div></div>
+            <div class="module"><div class="module-icon">M</div><div><strong>形态操作 Moop</strong><code>O = Open(G, A), C = Close(G, A), M = C - O</code><span>开闭运算与形态梯度增强融合边界。</span></div></div>
+            <div class="module"><div class="module-icon">T</div><div><strong>纹理特征 Text</strong><code>Text = [LBP, GLCM: contrast, correlation, energy, homogeneity]</code><span>纹理统计量刻画皮肤微观异常。</span></div></div>
           </div>
           <div class="figure-card tall">
             <img src="../example/image copy 17.png" alt="不同特征提取方式的可视化效果对比" />
@@ -617,7 +617,12 @@
             <p class="subtitle">使用 AUC 衡量跨数据集整体检测性能。</p>
           </div>
         </div>
-        <div class="flow" style="margin-top:0.42in;">
+        <div class="dataset-brief-row">
+          <div><strong>FF++</strong><span>训练集，包含真实视频和 FaceSwap、DeepFakes、Face2Face、NeuralTextures 等典型伪造方式。</span></div>
+          <div><strong>CDF-v1 / CDF-v2</strong><span>Celeb-DF 两个版本，人物视频更自然、伪造质量更高，用于检验跨数据源泛化。</span></div>
+          <div><strong>DFD / DFDC / DFDCP</strong><span>Google DFD、Facebook DFDC 与预览集，覆盖更复杂采集场景和不同生成痕迹。</span></div>
+        </div>
+        <div class="flow" style="margin-top:0.2in;">
           <div class="flow-box">在 FF++ 上训练</div><div class="arrow">→</div><div class="flow-box">迁移到不同来源测试集</div><div class="arrow">→</div><div class="flow-box">评估跨场景泛化</div>
         </div>
         <div class="summary-band">该设置的目的不是验证同分布准确率，而是检验模型面对未知数据源和未知伪造痕迹时的泛化能力。</div>
@@ -908,6 +913,10 @@
             <div><strong>99.1%</strong><span>AVFF AUC</span></div>
             <div><strong>82.4-89.2%</strong><span>其他代表方法 AUC</span></div>
           </div>
+          <div class="metric-method-row fakeav-metric-methods">
+            <div><strong>AUC</strong><span>ROC 曲线下面积，统计所有阈值下 TPR 与 FPR 的整体排序能力，越高越好。</span></div>
+            <div><strong>Acc</strong><span>Accuracy = (TP + TN) / (TP + TN + FP + FN)，表示固定阈值下预测正确比例，越高越好。</span></div>
+          </div>
           <div class="large-figure-grid two">
             <div class="figure-card large-visual"><img src="../example/image copy 3.png" alt="FakeAVCeleb 数据集组成展示" />
               <div class="caption">图23 FakeAVCeleb 数据集组成展示。</div></div>
@@ -941,6 +950,11 @@
         <h2>工作三：MAVOS-DD 开放集评估</h2>
         <div class="divider"></div>
         <div class="body compact mavos-table-page">
+          <div class="metric-method-row mavos-metric-methods">
+            <div><strong>mAP</strong><span>对各类别 Precision-Recall 曲线求 AP 后取平均，衡量多类别排序质量。</span></div>
+            <div><strong>AUC</strong><span>ROC 曲线下面积，反映不同阈值下区分真实与伪造样本的整体能力。</span></div>
+            <div><strong>Acc</strong><span>Accuracy = 正确预测样本数 / 总样本数，表中单位为 %。</span></div>
+          </div>
           <div class="table-card mavos-results-table">
             <table class="generated-table">
               <thead>
@@ -1060,7 +1074,7 @@
                 <tr><td>Reject</td><td>Fake</td><td>Deny</td><td>身份不匹配且伪造，拒绝复合攻击</td></tr>
               </tbody>
             </table>
-              <div class="caption">表8 本页联合决策矩阵的论文来源，强调只有 ASV Accept 且 ADD Real 才通过。</div>
+              <div class="caption">表8 本页联合决策矩阵强调只有 ASV Accept 且 ADD Real 才通过。</div>
           </div>
         </div>
         <span class="slide-number">33 / 39</span>
@@ -1119,7 +1133,7 @@
             </div>
           </div>
           <div class="card blue">
-            <h3>论文给出的系统测试指标</h3>
+            <h3>系统测试指标</h3>
             <div class="grid two" style="gap:0.14in;margin-top:0.16in;">
               <div><div class="kpi">3.8%</div><p class="kpi-label">ASV EER</p></div>
               <div><div class="kpi">92.3%</div><p class="kpi-label">ADD AUC</p></div>
